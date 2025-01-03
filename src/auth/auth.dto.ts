@@ -3,6 +3,11 @@ class SignInAuthDto {
   readonly password: string;
 }
 
+type GetParams = {
+  userId?: string;
+  username?: string;
+};
+
 class SignUpAuthDto {
   readonly username: string;
   readonly fullname: string;
@@ -15,4 +20,4 @@ class TokenAuthDto {
   readonly token: string;
 }
 
-export { SignInAuthDto, SignUpAuthDto, TokenAuthDto };
+export { SignInAuthDto, SignUpAuthDto, TokenAuthDto, GetParams };
