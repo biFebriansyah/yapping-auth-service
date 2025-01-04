@@ -9,10 +9,8 @@ type GetParams = {
 };
 
 class SignUpAuthDto {
-  readonly username: string;
-  readonly fullname: string;
   readonly email: string;
-  readonly phone: number;
+  readonly username: string;
   readonly password: string;
 }
 

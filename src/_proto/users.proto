@@ -14,6 +14,13 @@ message CreateParams {
   string password = 3;
 }
 
+message GetUserCert {
+  string _id = 1;
+  string email = 2;
+  string username = 3;
+  string password = 4;
+}
+
 message CreateRespone {
   string userId = 1;
 }
@@ -39,6 +46,7 @@ message StandardRes {
 
 service UserService {
   rpc FindByUsername(GetParams) returns (GetUserDto);
+  rpc FatchCert(GetParams) returns (GetUserCert);
   rpc FindById(GetParams) returns (GetUserDto);
   rpc FetchAll(google.protobuf.Empty) returns (StandardRes);
   rpc CreateData(CreateParams) returns (CreateRespone);
