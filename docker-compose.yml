@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: bukanebi/auth-service:1
+    container_name: auth-service
+    restart: unless-stopped
+    ports:
+      - 3003:3003
+    networks:
+      - localnet
+
+networks:
+  localnet:
+    name: localnet
+    external: true

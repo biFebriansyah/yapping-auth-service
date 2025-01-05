@@ -1,4 +1,4 @@
-import { Controller, OnModuleInit, UnauthorizedException } from '@nestjs/common';
+import { Controller, OnModuleInit } from '@nestjs/common';
 import { ClientGrpc, GrpcMethod, Client, RpcException } from '@nestjs/microservices';
 import { JwtService } from '@nestjs/jwt';
 import { Observable, firstValueFrom } from 'rxjs';

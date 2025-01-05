@@ -40,6 +40,18 @@ message GetUserDto {
   string password = 12;
 }
 
+message UpdateData {
+  string userId = 1;
+  string name = 2;
+  string gender = 3;
+  string picture = 4;
+  string birthday = 5;
+  string horoscope = 6;
+  string zodiac = 7;
+  string height = 8;
+  string weight = 9;
+}
+
 message StandardRes {
   repeated GetUserDto users = 1;
 }
@@ -50,4 +62,6 @@ service UserService {
   rpc FindById(GetParams) returns (GetUserDto);
   rpc FetchAll(google.protobuf.Empty) returns (StandardRes);
   rpc CreateData(CreateParams) returns (CreateRespone);
+  rpc UpdateData(UpdateData) returns (CreateRespone);
+  rpc DeleteData(GetParams) returns (CreateRespone);
 }

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
@@ -9,7 +10,7 @@ async function bootstrap() {
     options: {
       package: 'auth',
       protoPath: join(__dirname, './_proto/auth.proto'),
-      url: process.env.GRPC_URL ?? 'localhost:3001',
+      url: process.env.GRPC_URL || 'localhost:3001',
     },
   });
 
