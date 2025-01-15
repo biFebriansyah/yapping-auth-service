@@ -34,10 +34,10 @@ A backend service for a chat application, designed and developed for research an
 
 ```bash
 # Clone the repository
-git clone https://github.com/biFebriansyah/yapping-users-service.git
+$ git clone https://github.com/biFebriansyah/yapping-auth-service.git
 
 # Install Depencies
-pnpm install
+$ pnpm install
 ```
 
 ### Compile and run the project
