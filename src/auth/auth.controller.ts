@@ -39,7 +39,7 @@ export class AuthController implements OnModuleInit {
     try {
       const userObserv = this.userService.FatchCert({ username: body.username });
       const userData = await firstValueFrom(userObserv);
-      if (!userData?.password) {
+      if (!userData || !userData?.password) {
         throw new RpcException({
           code: status.NOT_FOUND,
           message: 'Username Not Found',
@@ -57,6 +57,9 @@ export class AuthController implements OnModuleInit {
       const token = await this.jwt.signAsync({ userId: userData._id, username: body.username });
       return { token };
     } catch (error) {
+      if (error instanceof Error) {
+        throw error;
+      }
       throw new RpcException({
         code: status.INTERNAL,
         message: error.message || 'An unexpected error occurred',
