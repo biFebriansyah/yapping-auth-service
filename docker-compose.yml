@@ -1,6 +1,6 @@
 services:
   backend:
-    image: bukanebi/auth-service:1
+    image: bukanebi/auth-service:2
     container_name: auth-service
     restart: unless-stopped
     ports:

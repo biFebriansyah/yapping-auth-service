@@ -38,7 +38,7 @@ export class AuthController implements OnModuleInit {
   async SignIn(body: SignInAuthDto): Promise<TokenAuthDto> {
     try {
       const userObserv = this.userService.FatchCert({ username: body.username });
-      const userData = await firstValueFrom(userObserv);
+      const userData = await firstValueFrom(userObserv).catch(() => {});
       if (!userData || !userData?.password) {
         throw new RpcException({
           code: status.NOT_FOUND,
